@@ -32,10 +32,10 @@ public class ContactManager {
         String gender = "";
         switch (choice) {
             case 1:
-                gender = "Male";
+                gender = "Nam";
                 break;
             case 2:
-                gender = "Female";
+                gender = "Nữ";
                 break;
         }
         return gender;
@@ -50,8 +50,8 @@ public class ContactManager {
         System.out.println("Nhập họ tên");
         String name = scanner.nextLine();
         System.out.println("Nhập giới tính ");
-        System.out.println("1 . Male");
-        System.out.println("2. Female");
+        System.out.println("1 . Nam");
+        System.out.println("2. Nữ");
         int gender = Integer.parseInt(scanner.nextLine());
         System.out.println("Nhập địa chỉ");
         String address = scanner.nextLine();
@@ -88,7 +88,7 @@ public class ContactManager {
             String phone = scanner.nextLine();
             if (!validate.validatePhone(phone)) {
                 System.out.println("Số điện thoại không hợp lệ");
-                System.out.println(">[Chú ý]: Số điện thoại phải định dạng : (084-xx-xxxxxxx)");
+                System.out.println(">[Chú ý]: Hãy nhập đúng số điện thoại của bạn!");
                 System.out.println("--------------------");
             } else {
                 phoneNumber = phone;
@@ -104,7 +104,7 @@ public class ContactManager {
             System.out.println("Nhập email");
             String inputEmail = scanner.nextLine();
             if (!validate.validateEmail(inputEmail)) {
-                System.out.println("Email không hợp lệ kìa bro");
+                System.out.println("Email không hợp lệ!!");
                 System.out.println(">[Chú ý]: Email phải có dạng: abc.company@yahoo.com/abc12.company@gmail.vn/...");
                 System.out.println("------------------------");
             } else {
@@ -124,16 +124,16 @@ public class ContactManager {
         }
         if (editContact != null) {
             int index = contactList.indexOf(editContact);
-            System.out.println(" Nhập tên nhóm mới:");
+            System.out.println("Nhập tên nhóm mới:");
             editContact.setGroup(scanner.nextLine());
-            System.out.println(" Nhập Họ tên mới:");
+            System.out.println("Nhập Họ tên mới:");
             editContact.setName(scanner.nextLine());
-            System.out.println(" Nhập giới tính mới:");
-            System.out.println(" 1. Male");
-            System.out.println(" 2. Female");
+            System.out.println("Nhập giới tính mới:");
+            System.out.println("1. Nam");
+            System.out.println("2. Nữ");
             int gender = Integer.parseInt(scanner.nextLine());
             editContact.setGender(getGender(gender));
-            System.out.println(" Nhập địa chỉ mới:");
+            System.out.println("Nhập địa chỉ mới:");
             editContact.setAddress(scanner.nextLine());
             System.out.println("Nhập ngày sinh mới(dd-mm-yyyy):");
             String date = scanner.nextLine();
@@ -141,10 +141,10 @@ public class ContactManager {
             editContact.setDateOfBirth(dateOfBirth);
             editContact.setEmail(enterEmail());
             contactList.set(index, editContact);
-            System.out.println(" Sửa " + phoneNumber + " thành công !");
+            System.out.println("Sửa " + phoneNumber + " thành công !");
             System.out.println("--------------------");
         } else {
-            System.out.println(" Không tìm được danh bạ với số điện thoại trên !");
+            System.out.println("Không tìm được danh bạ với số điện thoại trên !");
             System.out.println("--------------------");
         }
     }
@@ -157,9 +157,9 @@ public class ContactManager {
             }
         }
         if (deleteContact != null) {
-            System.out.println(" Nhập xác nhận:");
-            System.out.println(" Y: Xóa");
-            System.out.println(" Ký tự khác: Thoát");
+            System.out.println("Nhập xác nhận:");
+            System.out.println("Y: Xóa");
+            System.out.println("Ký tự khác: Thoát");
             String confirm = scanner.next();
             if (confirm.equalsIgnoreCase("y")) {
                 contactList.remove(deleteContact);
@@ -167,7 +167,7 @@ public class ContactManager {
                 System.out.println("--------------------");
             }
         } else {
-            System.out.println(" Không tìm thấy danh bạ với số điện thoại trên !");
+            System.out.println("Không tìm thấy danh bạ với số điện thoại trên !");
             System.out.println("--------------------");
         }
     }
@@ -180,7 +180,7 @@ public class ContactManager {
             }
         }
         if (contactArrayList.isEmpty()) {
-            System.out.println(" Không tìm thấy danh bạ với từ khóa trên !");
+            System.out.println("Không tìm thấy danh bạ với từ khóa trên !");
             System.out.println("--------------------");
         } else {
             System.out.println("Danh bạ cần tìm:");
@@ -207,6 +207,7 @@ public class ContactManager {
                         + contact.getAddress() + "," + contact.getDateOfBirth() + "," + contact.getEmail() + "\n");
             }
             bufferedWriter.close();
+            System.out.println("Ghi vào tệp thành công");
             System.out.println("--------------------");
         } catch (IOException ioe) {
             System.out.println(ioe.getMessage());

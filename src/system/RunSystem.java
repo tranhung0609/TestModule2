@@ -42,7 +42,7 @@ public class RunSystem {
                         contactManager.addContact();
                         break;
                     case 3:
-                        System.out.println("Nhập số điện thoại cần sửa (084-xx-xxxxxxx):");
+                        System.out.println("Nhập số điện thoại cần sửa :");
                         String phoneEdit = scanner.nextLine();
                         if (phoneEdit.equals("")) {
                             menuOfSystem();
@@ -51,7 +51,7 @@ public class RunSystem {
                         }
                         break;
                     case 4:
-                        System.out.println(" Nhập số điện thoại cần xóa (084-xx-xxxxxxx):");
+                        System.out.println("Nhập số điện thoại cần xóa :");
                         String phoneDelete = scanner.nextLine();
                         if (phoneDelete.equals("")) {
                             menuOfSystem();
@@ -60,7 +60,7 @@ public class RunSystem {
                         }
                         break;
                     case 5:
-                        System.out.println(" Nhập từ khóa:");
+                        System.out.println("Nhập từ khóa:");
                         String keyword = scanner.nextLine();
                         contactManager.searchContactByNameOrPhoneNumber(keyword);
                         break;
@@ -78,7 +78,7 @@ public class RunSystem {
             } while (true);
         } catch (NumberFormatException | DateTimeParseException e) {
             System.out.println();
-            System.out.println(" Bạn nhập sai dữ liệu, mời nhập lại !!!");
+            System.out.println("Bạn nhập sai dữ liệu, mời nhập lại !!!");
             System.out.println("--------------------");
             System.out.println();
             menuOfSystem();

@@ -77,11 +77,11 @@ public class Contact {
     public String toString() {
         return "Danh bạ => " +
                 " Nhóm : " + group +
-                " Tên : " + name +
-                " Giới tính : " + gender +
-                " Địa chỉ : " + address +
-                " Ngày sinh : " + dateOfBirth +
-                " Địa chỉ : " + email +
+                "| Tên : " + name +
+                "| Giới tính : " + gender +
+                "| Địa chỉ : " + address +
+                "| Ngày sinh : " + dateOfBirth +
+                "| Email : " + email +
                 "\t(^_^)";
     }
 }
